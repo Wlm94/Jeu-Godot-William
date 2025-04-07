@@ -2,7 +2,7 @@
 
 *Cursed Currents* est un jeu de plateforme en 2D réalisé avec le moteur Godot. Vous incarnez un homme maudit, partiellement transformé en requin, qui tente désespérément de retrouver son apparence humaine.
 
-![Cursed Currents Banner](C:\Users\miste\Documents\jeux-vidéos\assets\banner.png)
+![Cursed Currents Banner](assets/banner.png)
 
 ---
 
@@ -67,4 +67,4 @@ L’apparence du héros est personnalisée pour correspondre au thème de la mal
 
 1. Cloner le dépôt :
    ```bash
-   git clone https://github.com/tonutilisateur/cursed-currents.git
+   git clone https://github.com/Wlm94/Jeu-Godot-William.git
