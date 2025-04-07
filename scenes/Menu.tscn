@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://rurmrmxjewah"]
+[gd_scene load_steps=6 format=3 uid="uid://rurmrmxjewah"]
 
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_1u255"]
 [ext_resource type="Texture2D" uid="uid://bxc0ad8quet53" path="res://assets/main menu.jpg" id="2_pm0lx"]
 [ext_resource type="FontFile" uid="uid://b7u8rj36yrxyu" path="res://assets/8bitOperatorPlus-Bold.ttf" id="4_qer2v"]
+[ext_resource type="AudioStream" uid="uid://ci176ogwf518w" path="res://assets/son/menu-song.mp3" id="4_xy2sg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5ray"]
 bg_color = Color(1, 1, 1, 0)
@@ -73,6 +74,9 @@ theme_override_font_sizes/font_size = 95
 text = "Cursed Currents"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_xy2sg")
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
