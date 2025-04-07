@@ -68,3 +68,19 @@ L’apparence du héros est personnalisée pour correspondre au thème de la mal
 1. Cloner le dépôt :
    ```bash
    git clone https://github.com/Wlm94/Jeu-Godot-William.git
+
+2. Ouvrir le projet dans Godot.
+
+3. Lancer la scène `menu.tscn` ou celle définie comme scène principale.
+
+---
+
+## ✍️ Auteur
+
+Projet réalisé par **William** dans le cadre de mon cursus BUT Informatique – parcours Développement de jeux vidéo (Godot).
+
+---
+
+## 📄 Licence
+
+Ce projet est à but éducatif. Utilisation personnelle uniquement.
