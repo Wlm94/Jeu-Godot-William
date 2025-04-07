@@ -11,7 +11,7 @@ script = ExtResource("1_te473")
 wait_time = 0.307
 one_shot = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="Mort" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_jdej4")
 volume_db = 24.0
 

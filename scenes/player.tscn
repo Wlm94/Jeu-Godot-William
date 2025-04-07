@@ -1,11 +1,10 @@
-[gd_scene load_steps=31 format=3 uid="uid://d4nvtmby0x1sl"]
+[gd_scene load_steps=30 format=3 uid="uid://d4nvtmby0x1sl"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_1lwp3"]
 [ext_resource type="Texture2D" uid="uid://dfefnbi4w4d3i" path="res://assets/perso_princ/mort.png" id="2_aacod"]
 [ext_resource type="Texture2D" uid="uid://cpxr8dw6vqlua" path="res://assets/perso_princ/idle.png" id="3_1si54"]
 [ext_resource type="Texture2D" uid="uid://cfch4gje8xm66" path="res://assets/perso_princ/saut.png" id="4_kihcj"]
 [ext_resource type="Texture2D" uid="uid://bqt3qy61oev8m" path="res://assets/perso_princ/marche.png" id="5_uccdw"]
-[ext_resource type="AudioStream" uid="uid://ddho547y7i3k2" path="res://assets/son/DeathSoundPlayer.mp3" id="6_x60k2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mhmi1"]
 atlas = ExtResource("2_aacod")
@@ -202,7 +201,3 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_lsanr")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_x60k2")
-volume_db = 24.0

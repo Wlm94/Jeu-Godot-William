@@ -4,7 +4,6 @@ extends CharacterBody2D
 const SPEED = 160.0
 const JUMP_VELOCITY = -400.0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 var is_alive = true
 
 func _physics_process(delta: float) -> void:
@@ -46,11 +45,9 @@ func die():
 		return
 	
 	is_alive = false
-	# Désactive les contrôles et collisions
 	set_physics_process(false)
 	$CollisionShape2D.set_deferred("disabled", true)
-	
-	# Animation de mort (optionnelle)
+
 	if has_node("AnimationPlayer"):
 		$AnimationPlayer.play("death")
 		await $AnimationPlayer.animation_finished
