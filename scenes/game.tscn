@@ -632,9 +632,6 @@ volume_db = -8.861
 [node name="Champignon" parent="méchants" instance=ExtResource("9_tte8p")]
 position = Vector2(1852, 423)
 
-[node name="fantome" parent="méchants" instance=ExtResource("13_n55c1")]
-position = Vector2(167, 806)
-
 [node name="petit_vert" parent="méchants" instance=ExtResource("14_mu6er")]
 position = Vector2(390, 95)
 scale = Vector2(1.4272, 1.31492)
