@@ -770,6 +770,15 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_d6kx8")
 text = "Continuer
 "
 
+[node name="Relancer" type="Button" parent="UI/Pause/PausePanel/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("44_6ci4o")
+theme_override_font_sizes/font_size = 46
+theme_override_styles/normal = SubResource("StyleBoxFlat_d6kx8")
+text = "Relancer
+"
+
 [node name="Menu" type="Button" parent="UI/Pause/PausePanel/VBoxContainer"]
 process_mode = 3
 layout_mode = 2
@@ -815,4 +824,5 @@ shape = SubResource("RectangleShape2D_hbwt4")
 position = Vector2(37, 1030)
 
 [connection signal="pressed" from="UI/Pause/PausePanel/VBoxContainer/Resume" to="UI/Pause" method="_on_resume_pressed"]
+[connection signal="pressed" from="UI/Pause/PausePanel/VBoxContainer/Relancer" to="UI/Pause" method="_on_relancer_pressed"]
 [connection signal="pressed" from="UI/Pause/PausePanel/VBoxContainer/Menu" to="UI/Pause" method="_on_menu_pressed"]
