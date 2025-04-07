@@ -1,0 +1,84 @@
+[gd_scene load_steps=16 format=3 uid="uid://bn8kuhb5h2sjf"]
+
+[ext_resource type="PackedScene" uid="uid://dun7obmkm2osi" path="res://scenes/killzone.tscn" id="1_djq01"]
+[ext_resource type="Script" path="res://scripts/ennemie.gd" id="1_h6f4e"]
+[ext_resource type="Texture2D" uid="uid://b7orj6rqt6rfl" path="res://assets/méchants/fantome/skeleton-animation_00.png" id="2_t47kr"]
+[ext_resource type="Texture2D" uid="uid://bag0k3y3xddrt" path="res://assets/méchants/fantome/skeleton-animation_01.png" id="3_imr7o"]
+[ext_resource type="Texture2D" uid="uid://cfxnl5ghkhhe1" path="res://assets/méchants/fantome/skeleton-animation_02.png" id="4_ah45g"]
+[ext_resource type="Texture2D" uid="uid://ct5r0a7uk85te" path="res://assets/méchants/fantome/skeleton-animation_03.png" id="5_y7su4"]
+[ext_resource type="Texture2D" uid="uid://7661u0ub7ak8" path="res://assets/méchants/fantome/skeleton-animation_04.png" id="6_8w1xh"]
+[ext_resource type="Texture2D" uid="uid://1kwge0cfhshq" path="res://assets/méchants/fantome/skeleton-animation_05.png" id="7_tff3p"]
+[ext_resource type="Texture2D" uid="uid://ch6e2jbo8xboc" path="res://assets/méchants/fantome/skeleton-animation_06.png" id="8_kw701"]
+[ext_resource type="Texture2D" uid="uid://drtadrgp7dg8w" path="res://assets/méchants/fantome/skeleton-animation_07.png" id="9_qrnrf"]
+[ext_resource type="Texture2D" uid="uid://ce2yym07j1jok" path="res://assets/méchants/fantome/skeleton-animation_08.png" id="10_qgcx1"]
+[ext_resource type="Texture2D" uid="uid://cjw4u2h7oqcul" path="res://assets/méchants/fantome/skeleton-animation_09.png" id="11_jiwgs"]
+[ext_resource type="Texture2D" uid="uid://dearni4nr3q75" path="res://assets/méchants/fantome/skeleton-animation_10.png" id="12_xsgd3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fa04l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_t47kr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_imr7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ah45g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y7su4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8w1xh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tff3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kw701")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qrnrf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qgcx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jiwgs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xsgd3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wye1d"]
+size = Vector2(6.01974, 12.4876)
+
+[node name="fantome" type="Node2D"]
+scale = Vector2(2.62529, 2.80666)
+script = ExtResource("1_h6f4e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.02, 0.02)
+sprite_frames = SubResource("SpriteFrames_fa04l")
+autoplay = "default"
+frame = 6
+frame_progress = 0.666239
+
+[node name="Killzone" parent="." instance=ExtResource("1_djq01")]
+position = Vector2(0, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(-1.78814e-07, -3)
+scale = Vector2(1.32896, 0.800795)
+shape = SubResource("RectangleShape2D_wye1d")
+
+[node name="RayCastDroit" type="RayCast2D" parent="."]
+target_position = Vector2(6, 0)
+
+[node name="RayCastGauche" type="RayCast2D" parent="."]
+target_position = Vector2(-6, 0)

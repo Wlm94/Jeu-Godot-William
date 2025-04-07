@@ -1,0 +1,100 @@
+[gd_scene load_steps=20 format=3 uid="uid://cnswecm184yn"]
+
+[ext_resource type="Script" path="res://scripts/ennemie.gd" id="1_5hy1o"]
+[ext_resource type="Texture2D" uid="uid://jba7eu21jts6" path="res://assets/méchants/insecte/skeleton-animation_00.png" id="2_700c4"]
+[ext_resource type="Texture2D" uid="uid://do53n3rkhbfap" path="res://assets/méchants/insecte/skeleton-animation_01.png" id="3_sfwfn"]
+[ext_resource type="Texture2D" uid="uid://dsxmmpmd4vmjt" path="res://assets/méchants/insecte/skeleton-animation_02.png" id="4_jxjom"]
+[ext_resource type="Texture2D" uid="uid://b5y4cw23wm03x" path="res://assets/méchants/insecte/skeleton-animation_03.png" id="5_s0m7r"]
+[ext_resource type="Texture2D" uid="uid://cjd32e7lm101i" path="res://assets/méchants/insecte/skeleton-animation_04.png" id="6_7kqka"]
+[ext_resource type="Texture2D" uid="uid://bbfuvd77snm6e" path="res://assets/méchants/insecte/skeleton-animation_05.png" id="7_loj5m"]
+[ext_resource type="Texture2D" uid="uid://d2sahbmaqstxr" path="res://assets/méchants/insecte/skeleton-animation_06.png" id="8_7lcuj"]
+[ext_resource type="Texture2D" uid="uid://b5muqp2k1lr3q" path="res://assets/méchants/insecte/skeleton-animation_07.png" id="9_xiqql"]
+[ext_resource type="Texture2D" uid="uid://r033pj0wa2k0" path="res://assets/méchants/insecte/skeleton-animation_08.png" id="10_62rrg"]
+[ext_resource type="Texture2D" uid="uid://cnuhttd5n5hiq" path="res://assets/méchants/insecte/skeleton-animation_09.png" id="11_4uym3"]
+[ext_resource type="Texture2D" uid="uid://cgum4mdtg43bo" path="res://assets/méchants/insecte/skeleton-animation_10.png" id="12_i4j4u"]
+[ext_resource type="Texture2D" uid="uid://d4bw2r30njab7" path="res://assets/méchants/insecte/skeleton-animation_11.png" id="13_q11xb"]
+[ext_resource type="Texture2D" uid="uid://clmootoaqq646" path="res://assets/méchants/insecte/skeleton-animation_12.png" id="14_lecj7"]
+[ext_resource type="Texture2D" uid="uid://nae3o330jjn1" path="res://assets/méchants/insecte/skeleton-animation_13.png" id="15_cg17c"]
+[ext_resource type="Texture2D" uid="uid://c8whp2flpbtrx" path="res://assets/méchants/insecte/skeleton-animation_14.png" id="16_uv7eb"]
+[ext_resource type="PackedScene" uid="uid://dun7obmkm2osi" path="res://scenes/killzone.tscn" id="17_041p5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1rh6h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_700c4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sfwfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jxjom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s0m7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7kqka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_loj5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7lcuj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xiqql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_62rrg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4uym3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_i4j4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_q11xb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_lecj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_cg17c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_uv7eb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_byv54"]
+size = Vector2(7.84598, 6.53754)
+
+[node name="insecte" type="Node2D"]
+scale = Vector2(2.9154, 2.90426)
+script = ExtResource("1_5hy1o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2.08)
+scale = Vector2(-0.0345913, 0.0331643)
+sprite_frames = SubResource("SpriteFrames_1rh6h")
+autoplay = "default"
+
+[node name="Killzone" parent="." instance=ExtResource("17_041p5")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(3.72529e-09, -2)
+scale = Vector2(1.01963, 0.917777)
+shape = SubResource("RectangleShape2D_byv54")
+
+[node name="RayCastDroit" type="RayCast2D" parent="."]
+position = Vector2(0, -1)
+target_position = Vector2(6, 0)
+
+[node name="RayCastGauche" type="RayCast2D" parent="."]
+position = Vector2(0, -1)
+target_position = Vector2(-6, 0)

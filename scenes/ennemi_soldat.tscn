@@ -1,0 +1,105 @@
+[gd_scene load_steps=21 format=3 uid="uid://oq38mqf3l04k"]
+
+[ext_resource type="Script" path="res://scripts/ennemie.gd" id="1_4lkov"]
+[ext_resource type="Texture2D" uid="uid://dkne7ssn60l4d" path="res://assets/méchants/ennemi_soldat/skeleton-01_walk_00.png" id="2_bufve"]
+[ext_resource type="Texture2D" uid="uid://bisps35d1sfoh" path="res://assets/méchants/ennemi_soldat/skeleton-01_walk_01.png" id="3_xn0ql"]
+[ext_resource type="Texture2D" uid="uid://d161crb3emmgt" path="res://assets/méchants/ennemi_soldat/skeleton-01_walk_02.png" id="4_4lleb"]
+[ext_resource type="Texture2D" uid="uid://d22j3o0m7xap6" path="res://assets/méchants/ennemi_soldat/skeleton-01_walk_03.png" id="5_il8w5"]
+[ext_resource type="Texture2D" uid="uid://qrf7liqd61fc" path="res://assets/méchants/ennemi_soldat/skeleton-01_walk_04.png" id="6_5js0u"]
+[ext_resource type="Texture2D" uid="uid://damr4tp0y8ap7" path="res://assets/méchants/ennemi_soldat/skeleton-01_walk_05.png" id="7_ug5o4"]
+[ext_resource type="Texture2D" uid="uid://di6msrq3bttt1" path="res://assets/méchants/ennemi_soldat/skeleton-01_walk_06.png" id="8_jmxs3"]
+[ext_resource type="Texture2D" uid="uid://cbwtclpq02hr1" path="res://assets/méchants/ennemi_soldat/skeleton-01_walk_07.png" id="9_5uwa5"]
+[ext_resource type="Texture2D" uid="uid://7514qxthb5f2" path="res://assets/méchants/ennemi_soldat/skeleton-01_walk_08.png" id="10_uhisr"]
+[ext_resource type="Texture2D" uid="uid://cc6xft023knfo" path="res://assets/méchants/ennemi_soldat/skeleton-01_walk_09.png" id="11_epcuh"]
+[ext_resource type="Texture2D" uid="uid://bvg8fqvn1hdsm" path="res://assets/méchants/ennemi_soldat/skeleton-01_walk_10.png" id="12_cv2hn"]
+[ext_resource type="Texture2D" uid="uid://b3qbrbbvs805" path="res://assets/méchants/ennemi_soldat/skeleton-01_walk_11.png" id="13_014m3"]
+[ext_resource type="PackedScene" uid="uid://dun7obmkm2osi" path="res://scenes/killzone.tscn" id="13_g27fv"]
+[ext_resource type="Texture2D" uid="uid://cjksfyqq67q46" path="res://assets/méchants/ennemi_soldat/skeleton-01_walk_12.png" id="14_2wg4r"]
+[ext_resource type="Texture2D" uid="uid://eemsslacvy4s" path="res://assets/méchants/ennemi_soldat/skeleton-01_walk_13.png" id="15_x1agc"]
+[ext_resource type="Texture2D" uid="uid://c858ea2ljs24q" path="res://assets/méchants/ennemi_soldat/skeleton-01_walk_14.png" id="16_i87rh"]
+[ext_resource type="Texture2D" uid="uid://b021uhm3t108p" path="res://assets/méchants/ennemi_soldat/skeleton-01_walk_15.png" id="17_3hk7h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7tl0m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bufve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xn0ql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4lleb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_il8w5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5js0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ug5o4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jmxs3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5uwa5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_uhisr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_epcuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_cv2hn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_014m3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2wg4r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_x1agc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_i87rh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_3hk7h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wye1d"]
+size = Vector2(4.51481, 6.80373)
+
+[node name="ennemi_soldat" type="Node2D"]
+scale = Vector2(4.16317, 4.07164)
+script = ExtResource("1_4lkov")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 5.96046e-08)
+scale = Vector2(-0.00824304, 0.00729676)
+sprite_frames = SubResource("SpriteFrames_7tl0m")
+autoplay = "default"
+frame = 2
+frame_progress = 0.611765
+
+[node name="Killzone" parent="." instance=ExtResource("13_g27fv")]
+position = Vector2(0, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(1.49012e-07, -2.70646)
+scale = Vector2(1.28748, 0.795581)
+shape = SubResource("RectangleShape2D_wye1d")
+
+[node name="RayCastDroit" type="RayCast2D" parent="."]
+target_position = Vector2(6, 0)
+
+[node name="RayCastGauche" type="RayCast2D" parent="."]
+target_position = Vector2(-6, 0)

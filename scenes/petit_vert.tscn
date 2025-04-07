@@ -1,0 +1,72 @@
+[gd_scene load_steps=15 format=3 uid="uid://vgp2225446qe"]
+
+[ext_resource type="Texture2D" uid="uid://j3ru2ma0tup" path="res://assets/méchants/petit_vert/skeleton-animation_00.png" id="2_eb5xm"]
+[ext_resource type="Texture2D" uid="uid://cxwst724csp4d" path="res://assets/méchants/petit_vert/skeleton-animation_01.png" id="3_54pmm"]
+[ext_resource type="Texture2D" uid="uid://npuptpgqsoax" path="res://assets/méchants/petit_vert/skeleton-animation_02.png" id="4_ousmp"]
+[ext_resource type="Texture2D" uid="uid://ny7o0cyawfcw" path="res://assets/méchants/petit_vert/skeleton-animation_03.png" id="5_wb5tp"]
+[ext_resource type="Texture2D" uid="uid://dfeykusylr6x4" path="res://assets/méchants/petit_vert/skeleton-animation_04.png" id="6_1hr3i"]
+[ext_resource type="Texture2D" uid="uid://ca3qst1504rm2" path="res://assets/méchants/petit_vert/skeleton-animation_05.png" id="7_or6jo"]
+[ext_resource type="Texture2D" uid="uid://cuclu1kh10p6l" path="res://assets/méchants/petit_vert/skeleton-animation_06.png" id="8_dqyg1"]
+[ext_resource type="Texture2D" uid="uid://chqrml5fotvj1" path="res://assets/méchants/petit_vert/skeleton-animation_07.png" id="9_xhrci"]
+[ext_resource type="Texture2D" uid="uid://bgasss7p1x3q0" path="res://assets/méchants/petit_vert/skeleton-animation_08.png" id="10_ibyv7"]
+[ext_resource type="Texture2D" uid="uid://balnnhrk6ipby" path="res://assets/méchants/petit_vert/skeleton-animation_09.png" id="11_tokwk"]
+[ext_resource type="Texture2D" uid="uid://c6dpke8uwfxsr" path="res://assets/méchants/petit_vert/skeleton-animation_10.png" id="12_rgh86"]
+[ext_resource type="PackedScene" uid="uid://dun7obmkm2osi" path="res://scenes/killzone.tscn" id="13_t6vag"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5sqhg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_eb5xm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_54pmm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ousmp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wb5tp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1hr3i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_or6jo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dqyg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xhrci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ibyv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tokwk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_rgh86")
+}],
+"loop": true,
+"name": &"default",
+"speed": 13.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3rl1"]
+size = Vector2(21, 23)
+
+[node name="petit_vert" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -3)
+scale = Vector2(0.085, 0.085)
+sprite_frames = SubResource("SpriteFrames_5sqhg")
+autoplay = "default"
+
+[node name="Killzone" parent="." instance=ExtResource("13_t6vag")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0.5, -2.5)
+shape = SubResource("RectangleShape2D_p3rl1")
